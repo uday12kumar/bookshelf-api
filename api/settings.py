@@ -59,7 +59,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'bookshelf.users.middleware.CustomAuthMiddleware',
-
 ]
 
 TEMPLATES = [
