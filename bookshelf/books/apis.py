@@ -1,5 +1,3 @@
-from django.db.models import Sum, Count
-from rest_framework import status, filters
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 
@@ -11,6 +9,16 @@ from bookshelf.users.models import Author
 class GetUpdateBook(RetrieveUpdateDestroyAPIView):
     serializer_class = BookSerializer
     queryset = Book.objects
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = CreateBookSerializer(instance, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        if getattr(instance, '_prefetched_objects_cache', None):
+            instance._prefetched_objects_cache = {}
+        return Response(serializer.data)
 
 
 class CreateBook(CreateAPIView):

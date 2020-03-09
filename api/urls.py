@@ -11,16 +11,14 @@ app_name = "bookshelf"
 
 urlpatterns = [
     path('api/v1/', include([
-        path('docs', schema_view),
         path('users/', include(user_urls)),
         path('books/', include(book_urs)),
-
     ])),
 ]
 
 urlpatterns += [
+    path('', schema_view),
     path('_admin/', admin.site.urls),
-
 ]
 
 # try:

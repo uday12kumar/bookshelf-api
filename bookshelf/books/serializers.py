@@ -18,8 +18,8 @@ class CreateBookSerializer(serializers.ModelSerializer):
 
 
 class BookSerializer(CreateBookSerializer):
-    author = AuthorSerializer(many=True)
-    genre = GenreSerializer(many=True)
+    author = AuthorSerializer(many=True, read_only=True)
+    genre = GenreSerializer(many=True, read_only=True)
 
 
 class AuthorBookSerializer(serializers.ModelSerializer):
