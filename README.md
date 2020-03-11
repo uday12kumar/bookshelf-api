@@ -1,9 +1,10 @@
 # bookshelf-api
 
-To start the server
-$docker-compose build
-$docker-compose up
+###$docker-compose build
+###$docker-compose up
+Runs the server
+Open http://localhost:8000 to view it in the browser.
 
-To run the migrations run the command
-$docker-compose run python manage.py makemigrations
-$docker-compose run python manage.py migrate
+###$docker-compose run python manage.py makemigrations
+###$docker-compose run python manage.py migrate
+runs the migrations
