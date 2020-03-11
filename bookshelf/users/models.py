@@ -8,7 +8,6 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 from bookshelf.models import TimestampedModel
-from bookshelf.utils import random_profile_image_name
 
 
 class UserManager(UserManager):

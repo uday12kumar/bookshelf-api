@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'bookshelf',
         'USER': 'bookshelf',
         'PASSWORD': 'cnkfM3Tl1r1Vw145EoztP7UoScfkPJ',
-        'HOST': '127.0.0.1',
+        'HOST': 'db',
         'PORT': '5432'
     }
 }
